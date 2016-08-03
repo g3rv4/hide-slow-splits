@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Hide slow splits",
+  "version": "0.1",
+  "description": "Hides the Garmin Connect splits that are slower than a defined setting",
+  "author": "Gervasio Marchand <gmc@gmc.uy>",
+  "content_scripts": [{
+        "matches": ["https://connect.garmin.com/modern/activity/*"],
+        "js": [ "bg.js" ],
+        "run_at": "document_start"
+    }],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "https://connect.garmin.com/modern/activity/*"
+  ]
+}
